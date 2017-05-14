@@ -1,0 +1,107 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DecisionTreeJuntadoMarbille</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DecisionTreeJuntadoMarbille</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/marbille/UP/CS 180/mp2/DecisionTreeJuntadoMarbille.py">/home/marbille/UP/CS 180/mp2/DecisionTreeJuntadoMarbille.py</a></font></td></tr></table>
+    <p><tt>@author:&nbsp;Marbille&nbsp;Juntado<br>
+Copyright:&nbsp;2017<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;performs&nbsp;Decision&nbsp;Tree&nbsp;learning&nbsp;on&nbsp;dataset&nbsp;provided&nbsp;by&nbsp;tic-tac-toe.data.<br>
+It&nbsp;is&nbsp;based&nbsp;on&nbsp;the&nbsp;ID3&nbsp;algorithm.&nbsp;Two&nbsp;experiments&nbsp;have&nbsp;been&nbsp;performed&nbsp;that&nbsp;outputs&nbsp;several<br>
+files&nbsp;consisting&nbsp;of&nbsp;the&nbsp;node&nbsp;trace,&nbsp;decision&nbsp;tree,&nbsp;confusion&nbsp;matrix,&nbsp;and&nbsp;accuracy&nbsp;results.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="DecisionTreeJuntadoMarbille.html#TreeNode">TreeNode</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TreeNode">class <strong>TreeNode</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TreeNode-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Construct&nbsp;a&nbsp;new&nbsp;'<a href="#TreeNode">TreeNode</a>'&nbsp;object.<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;The&nbsp;name&nbsp;of&nbsp;node</tt></dd></dl>
+
+<dl><dt><a name="TreeNode-predictResults"><strong>predictResults</strong></a>(self, cases, a)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;predicted&nbsp;outcomes</tt></dd></dl>
+
+<dl><dt><a name="TreeNode-predictResultsRecurse"><strong>predictResultsRecurse</strong></a>(self, case, a)</dt><dd><tt>Recursively,&nbsp;method&nbsp;returns&nbsp;the&nbsp;predicted&nbsp;classification&nbsp;of&nbsp;the&nbsp;leaf&nbsp;nodes&nbsp;(bottom-most)</tt></dd></dl>
+
+<dl><dt><a name="TreeNode-visualizeTree"><strong>visualizeTree</strong></a>(self)</dt><dd><tt>Visualizes&nbsp;the&nbsp;tree</tt></dd></dl>
+
+<dl><dt><a name="TreeNode-visualizeTreeRecurse"><strong>visualizeTreeRecurse</strong></a>(self, level)</dt><dd><tt>Includes&nbsp;a&nbsp;log/trace&nbsp;of&nbsp;each&nbsp;node&nbsp;as&nbsp;the&nbsp;tree&nbsp;builds&nbsp;itself&nbsp;recursively</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-buildDTree"><strong>buildDTree</strong></a>(examples, targetAttribute, attributes)</dt><dd><tt>Returns&nbsp;the&nbsp;root&nbsp;node&nbsp;of&nbsp;the&nbsp;decision&nbsp;tree<br>
+&nbsp;<br>
+:param&nbsp;examples:&nbsp;Each&nbsp;line&nbsp;of&nbsp;the&nbsp;training&nbsp;set</tt></dd></dl>
+ <dl><dt><a name="-constructTreeFromFile"><strong>constructTreeFromFile</strong></a>(filepath)</dt><dd><tt>Builds&nbsp;a&nbsp;decision&nbsp;tree&nbsp;from&nbsp;the&nbsp;training&nbsp;data&nbsp;set&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-entropy"><strong>entropy</strong></a>(p, e)</dt><dd><tt>Calculates&nbsp;entropy<br>
+&nbsp;<br>
+:param&nbsp;p:&nbsp;list&nbsp;of&nbsp;probabilities&nbsp;for&nbsp;each&nbsp;value&nbsp;<br>
+:param&nbsp;e:&nbsp;list&nbsp;of&nbsp;information&nbsp;gain&nbsp;for&nbsp;each&nbsp;value</tt></dd></dl>
+ <dl><dt><a name="-gather_data"><strong>gather_data</strong></a>(filename)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;used&nbsp;in&nbsp;reading&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;original&nbsp;data&nbsp;set&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-getAttributesFromFile"><strong>getAttributesFromFile</strong></a>(filepath)</dt><dd><tt>The&nbsp;first&nbsp;line&nbsp;of&nbsp;the&nbsp;test&nbsp;file&nbsp;contains&nbsp;the&nbsp;attributes&nbsp;(categories)</tt></dd></dl>
+ <dl><dt><a name="-getMostCommonLabel"><strong>getMostCommonLabel</strong></a>(nodes)</dt><dd><tt>Returns&nbsp;the&nbsp;most&nbsp;dominant&nbsp;classification&nbsp;in&nbsp;the&nbsp;list&nbsp;of&nbsp;nodes</tt></dd></dl>
+ <dl><dt><a name="-getMostCommonValue"><strong>getMostCommonValue</strong></a>(attr, examples, values)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;with&nbsp;the&nbsp;highest&nbsp;frequency&nbsp;of&nbsp;the&nbsp;given&nbsp;attribute</tt></dd></dl>
+ <dl><dt><a name="-header"><strong>header</strong></a>(data)</dt><dd><tt>Useful&nbsp;for&nbsp;data&nbsp;sets&nbsp;without&nbsp;any&nbsp;attribute&nbsp;names.&nbsp;Generically&nbsp;labels<br>
+each&nbsp;attribute&nbsp;as&nbsp;'Attribute&nbsp;+&nbsp;&lt;number&gt;'&nbsp;to&nbsp;accommodate&nbsp;different&nbsp;datasets.&nbsp;<br>
+The&nbsp;last&nbsp;attribute&nbsp;is&nbsp;named&nbsp;'Classification'&nbsp;(+/-).</tt></dd></dl>
+ <dl><dt><a name="-infoGain"><strong>infoGain</strong></a>(count1, count2)</dt><dd><tt>Returns&nbsp;the&nbsp;information&nbsp;gain&nbsp;at&nbsp;any&nbsp;particular&nbsp;level&nbsp;of&nbsp;tree&nbsp;construction<br>
+&nbsp;<br>
+:param&nbsp;count1:&nbsp;Contains&nbsp;the&nbsp;number&nbsp;of&nbsp;positively-classified&nbsp;training&nbsp;examples<br>
+:param&nbsp;count2:&nbsp;Contains&nbsp;the&nbsp;number&nbsp;of&nbsp;negatively-classified&nbsp;training&nbsp;exampels</tt></dd></dl>
+ <dl><dt><a name="-isNegative"><strong>isNegative</strong></a>(word)</dt><dd><tt>Boolean&nbsp;function&nbsp;that&nbsp;determines&nbsp;whether&nbsp;a&nbsp;word&nbsp;is&nbsp;negative.<br>
+Used&nbsp;in&nbsp;the&nbsp;classification&nbsp;of&nbsp;training&nbsp;example.</tt></dd></dl>
+ <dl><dt><a name="-isPositive"><strong>isPositive</strong></a>(word)</dt><dd><tt>Boolean&nbsp;function&nbsp;that&nbsp;determines&nbsp;whether&nbsp;a&nbsp;word&nbsp;is&nbsp;positive.<br>
+Used&nbsp;in&nbsp;the&nbsp;classification&nbsp;of&nbsp;training&nbsp;example.<br>
+:param&nbsp;word:&nbsp;any&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-parseTestCases"><strong>parseTestCases</strong></a>(filepath)</dt><dd><tt>Parses&nbsp;the&nbsp;test&nbsp;cases&nbsp;from&nbsp;the&nbsp;test&nbsp;data&nbsp;set&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-returnAttributeHighestInfoGain"><strong>returnAttributeHighestInfoGain</strong></a>(attributes, examples)</dt><dd><tt>Returns&nbsp;the&nbsp;attribute&nbsp;with&nbsp;the&nbsp;highest&nbsp;information&nbsp;gain&nbsp;and&nbsp;the&nbsp;corresponding&nbsp;value<br>
+&nbsp;<br>
+:param&nbsp;attributes:&nbsp;The&nbsp;attributes&nbsp;(categories)&nbsp;of&nbsp;the&nbsp;data<br>
+:param&nbsp;examples:&nbsp;The&nbsp;training&nbsp;examples&nbsp;from&nbsp;the&nbsp;data&nbsp;set</tt></dd></dl>
+ <dl><dt><a name="-split_data"><strong>split_data</strong></a>(data)</dt><dd><tt>Randomly&nbsp;divides&nbsp;the&nbsp;original&nbsp;data&nbsp;set&nbsp;into&nbsp;two&nbsp;equal&nbsp;sets:<br>
+Training&nbsp;and&nbsp;Testing&nbsp;data&nbsp;sets<br>
+&nbsp;<br>
+:param:&nbsp;The&nbsp;original&nbsp;data&nbsp;sets</tt></dd></dl>
+ <dl><dt><a name="-uniqueValues"><strong>uniqueValues</strong></a>(attrIndex, examples)</dt><dd><tt>Returns&nbsp;list&nbsp;of&nbsp;the&nbsp;distinct&nbsp;values&nbsp;of&nbsp;the&nbsp;current&nbsp;attribute</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+
+    
+
+</body></html>
